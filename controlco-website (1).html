@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Controlco — Building Automation Distributor | Certified N4 Training</title>
+<meta name="description" content="Controlco is your trusted Building Automation System distributor. Shop 20+ top brands including Belimo, Honeywell, Siemens. Certified Niagara N4 Training available."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+/* ─── RESET & VARIABLES ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g900:#062c14;--g800:#0d4a20;--g700:#145c28;--g600:#1a7232;
+  --g500:#22913e;--g400:#35b055;--g300:#5ccc78;--g200:#a8eabc;
+  --g100:#e4f7eb;--g50:#f2fbf5;
+  --white:#ffffff;--off:#f8fdf9;
+  --gray9:#0f1a14;--gray7:#2d3d35;--gray5:#667a6e;--gray3:#adbdb5;
+  --gray2:#d4e0d8;--gray1:#edf3ef;
+  --gold:#e8a020;--red:#e03535;
+  --font-display:'Syne',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --shadow-sm:0 1px 3px rgba(6,44,20,.08),0 1px 2px rgba(6,44,20,.06);
+  --shadow-md:0 4px 16px rgba(6,44,20,.1),0 2px 6px rgba(6,44,20,.08);
+  --shadow-lg:0 12px 40px rgba(6,44,20,.14),0 4px 12px rgba(6,44,20,.08);
+  --radius:10px;--radius-lg:18px;
+  --transition:all .22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--white);color:var(--gray9);line-height:1.65;overflow-x:clip}
+body.cart-open,body.menu-open{overflow:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:var(--font-body)}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--g100)}
+::-webkit-scrollbar-thumb{background:var(--g500);border-radius:6px}
+
+/* ─── UTILITIES ─── */
+.container{max-width:1240px;margin:0 auto;padding:0 48px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:50px;font-size:11.5px;font-weight:600;letter-spacing:.3px}
+.tag-green{background:var(--g100);color:var(--g700)}
+.tag-gold{background:#fff5e0;color:#a06010}
+.tag-red{background:#fee;color:#a01010}
+.tag-blue{background:#e8f0ff;color:#2040a0}
+
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:var(--radius);font-size:14.5px;font-weight:600;font-family:var(--font-body);border:2px solid transparent;transition:var(--transition);white-space:nowrap}
+.btn-primary{background:var(--g500);color:#fff;border-color:var(--g500)}
+.btn-primary:hover{background:var(--g600);border-color:var(--g600);box-shadow:0 4px 16px rgba(34,145,62,.35);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--g700);border-color:var(--g500)}
+.btn-outline:hover{background:var(--g50);transform:translateY(-1px)}
+.btn-white{background:#fff;color:var(--g800);border-color:#fff}
+.btn-white:hover{background:var(--g100);transform:translateY(-1px)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.22)}
+.btn-sm{padding:8px 16px;font-size:13px}
+.btn-lg{padding:14px 32px;font-size:16px}
+
+/* ─── TOP BAR ─── */
+.topbar{background:var(--g900);color:rgba(255,255,255,.75);font-size:12.5px;padding:7px 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.topbar a{color:rgba(255,255,255,.85);transition:color .2s}
+.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:20px}
+.topbar-right{display:flex;gap:20px;align-items:center}
+
+/* ─── NAVBAR ─── */
+.navbar{background:var(--white);border-bottom:1px solid var(--gray2);position:sticky;top:0;z-index:1000;transition:box-shadow .3s}
+.navbar.scrolled{box-shadow:var(--shadow-md)}
+.navbar-inner{display:flex;align-items:center;gap:0;height:68px}
+.logo{display:flex;align-items:center;gap:10px;margin-right:40px;flex-shrink:0}
+.logo-mark{width:38px;height:38px;background:linear-gradient(135deg,var(--g600),var(--g400));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:800;font-family:var(--font-display)}
+.logo-text{font-family:var(--font-display);font-weight:800;font-size:19px;color:var(--g900);letter-spacing:-.3px}
+.logo-text span{color:var(--g500)}
+
+/* NAV LINKS */
+.nav-links{display:flex;align-items:center;gap:2px;flex:1}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray7);transition:var(--transition)}
+.nav-link:hover,.nav-link.active{color:var(--g600);background:var(--g50)}
+.nav-link svg{width:14px;height:14px;transition:transform .2s}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+
+/* MEGA MENU */
+.mega-menu{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--gray2);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:24px;min-width:640px;display:none;z-index:200;animation:fadeDown .18s ease}
+.nav-item:hover .mega-menu{display:block}
+.mega-menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.mega-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:13.5px;color:var(--gray7);transition:var(--transition)}
+.mega-link:hover{background:var(--g50);color:var(--g700)}
+.mega-link-icon{width:32px;height:32px;background:var(--g100);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.mega-link-text{font-weight:500}
+.mega-link-sub{font-size:11.5px;color:var(--gray5);margin-top:1px}
+
+/* DROPDOWN */
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--gray2);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:10px;min-width:200px;display:none;z-index:200;animation:fadeDown .18s ease}
+.nav-item:hover .dropdown{display:block}
+.dropdown-link{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:8px;font-size:13.5px;color:var(--gray7);transition:var(--transition)}
+.dropdown-link:hover{background:var(--g50);color:var(--g700)}
+
+/* NAV ACTIONS */
+.nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
+.nav-search-btn{width:38px;height:38px;background:var(--gray1);border:none;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--gray7);transition:var(--transition)}
+.nav-search-btn:hover{background:var(--g100);color:var(--g700)}
+.cart-btn{position:relative}
+.cart-count{position:absolute;top:-4px;right:-4px;background:var(--g500);color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+
+@keyframes fadeDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── SEARCH OVERLAY ─── */
+.search-overlay{position:fixed;inset:0;background:rgba(6,44,20,.6);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding-top:80px;backdrop-filter:blur(4px)}
+.search-overlay.open{display:flex}
+.search-box{background:#fff;border-radius:var(--radius-lg);width:100%;max-width:680px;overflow:hidden;box-shadow:var(--shadow-lg);animation:fadeDown .2s ease}
+.search-input-wrap{display:flex;align-items:center;padding:18px 22px;gap:12px;border-bottom:1px solid var(--gray1)}
+.search-input-wrap input{flex:1;border:none;outline:none;font-size:18px;font-family:var(--font-body);color:var(--gray9)}
+.search-input-wrap input::placeholder{color:var(--gray3)}
+.search-suggestions{padding:12px 0}
+.search-suggestion{display:flex;align-items:center;gap:12px;padding:10px 22px;font-size:14px;color:var(--gray7);cursor:pointer;transition:background .15s}
+.search-suggestion:hover{background:var(--g50)}
+.search-suggestion svg{color:var(--gray3);width:16px;height:16px;flex-shrink:0}
+
+/* ─── HERO ─── */
+.hero{background:linear-gradient(160deg,var(--g900) 0%,var(--g700) 55%,var(--g500) 100%);color:#fff;padding:110px 0 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'%3E%3Cpath d='M0 40h80M40 0v80M20 0v80M60 0v80M0 20h80M0 60h80'/%3E%3C/g%3E%3C/svg%3E");background-size:80px 80px}
+.hero-blob{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(92,204,120,.18) 0%,transparent 70%);top:-150px;right:-100px;pointer-events:none}
+.hero-blob2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(53,176,85,.12) 0%,transparent 70%);bottom:-80px;left:30%;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 440px;gap:72px;align-items:center;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:7px 16px;border-radius:50px;font-size:12.5px;font-weight:600;letter-spacing:.5px;margin-bottom:24px;color:rgba(255,255,255,.9)}
+.hero-badge span{width:7px;height:7px;background:#6ee8a2;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.4)}}
+.hero h1{font-family:var(--font-display);font-size:52px;font-weight:800;line-height:1.08;letter-spacing:-1px;margin-bottom:22px}
+.hero h1 span{color:#6ee8a2}
+.hero-sub{font-size:17px;opacity:.8;line-height:1.65;margin-bottom:36px;max-width:520px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);border-radius:var(--radius);overflow:hidden}
+.hero-stat{background:rgba(255,255,255,.08);padding:18px 16px;text-align:center}
+.hero-stat-num{font-family:var(--font-display);font-size:26px;font-weight:800;color:#6ee8a2;line-height:1;margin-bottom:4px}
+.hero-stat-label{font-size:12px;opacity:.65;letter-spacing:.3px}
+
+/* HERO CARD */
+.hero-card{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-lg);padding:28px;position:relative}
+.hero-card-title{font-family:var(--font-display);font-size:17px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.session-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:var(--transition)}
+.session-item:hover{background:rgba(255,255,255,.14)}
+.session-dates{font-weight:600;font-size:13.5px}
+.session-meta{font-size:12px;opacity:.7;margin-top:2px}
+.session-seats{font-size:12px;padding:4px 10px;border-radius:50px;font-weight:600}
+.seats-open{background:rgba(110,232,162,.2);color:#6ee8a2}
+.seats-limited{background:rgba(248,180,0,.2);color:#f8b400}
+.hero-card-cta{margin-top:16px;width:100%;justify-content:center}
+
+/* ─── TRUST BAR ─── */
+.trustbar{background:var(--g900);padding:14px 0}
+.trustbar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:13px;font-weight:500}
+.trust-icon{width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+
+/* ─── SECTION COMMONS ─── */
+.section{padding:96px 0}
+.section-header{margin-bottom:60px}
+.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g500);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.section-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--g400)}
+.section-title{font-family:var(--font-display);font-size:36px;font-weight:800;color:var(--g900);line-height:1.15;letter-spacing:-.5px;margin-bottom:14px}
+.section-sub{font-size:16px;color:var(--gray5);max-width:560px;line-height:1.7}
+
+/* ─── QUICK SEARCH ─── */
+.quick-search-section{background:var(--g50);padding:40px 0;border-bottom:1px solid var(--g200)}
+.qs-inner{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.qs-label{font-weight:600;font-size:15px;color:var(--g800);white-space:nowrap}
+.qs-input-wrap{flex:1;min-width:260px;position:relative}
+.qs-input{width:100%;padding:13px 48px 13px 18px;border:2px solid var(--g200);border-radius:var(--radius);font-size:15px;font-family:var(--font-body);background:#fff;color:var(--gray9);outline:none;transition:var(--transition)}
+.qs-input:focus{border-color:var(--g500);box-shadow:0 0 0 4px rgba(34,145,62,.1)}
+.qs-input-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--gray3);pointer-events:none}
+
+/* ─── CATEGORIES ─── */
+.categories-section{background:#fff}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat-card{background:var(--off);border:1.5px solid var(--gray2);border-radius:var(--radius-lg);padding:28px 22px;text-align:center;transition:var(--transition);cursor:pointer;position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--g600),var(--g400));opacity:0;transition:opacity .25s}
+.cat-card:hover{border-color:var(--g400);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.cat-card:hover::before{opacity:1}
+.cat-card:hover .cat-icon,.cat-card:hover .cat-name,.cat-card:hover .cat-count{position:relative;z-index:1;color:#fff}
+.cat-card:hover .cat-icon{background:rgba(255,255,255,.2)}
+.cat-icon{width:52px;height:52px;background:var(--g100);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 14px;transition:var(--transition)}
+.cat-name{font-family:var(--font-display);font-size:14.5px;font-weight:700;color:var(--g900);margin-bottom:4px;transition:color .25s}
+.cat-count{font-size:12px;color:var(--gray5);transition:color .25s}
+
+/* ─── PRODUCTS ─── */
+.products-section{background:var(--g50)}
+.products-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px}
+.products-tabs{display:flex;gap:4px;background:var(--gray1);padding:4px;border-radius:var(--radius)}
+.tab-btn{padding:8px 18px;border-radius:7px;border:none;background:transparent;font-size:13.5px;font-weight:600;color:var(--gray5);cursor:pointer;transition:var(--transition);font-family:var(--font-body)}
+.tab-btn.active{background:#fff;color:var(--g700);box-shadow:var(--shadow-sm)}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.product-card{background:#fff;border:1.5px solid var(--gray2);border-radius:var(--radius-lg);overflow:hidden;transition:var(--transition);cursor:pointer}
+.product-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:var(--g300)}
+.product-img{height:160px;background:var(--gray1);display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden}
+.product-img-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--g100),#fff);opacity:.4}
+.product-badge{position:absolute;top:10px;left:10px}
+.product-body{padding:18px}
+.product-brand{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--g500);margin-bottom:4px}
+.product-name{font-weight:700;font-size:14.5px;color:var(--gray9);margin-bottom:6px;line-height:1.35}
+.product-desc{font-size:13px;color:var(--gray5);line-height:1.5;margin-bottom:14px;height:38px;overflow:hidden}
+.product-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--gray1);padding-top:14px;margin-top:4px}
+.product-price{font-family:var(--font-display);font-weight:800;font-size:18px;color:var(--g800)}
+.product-price sup{font-size:12px;font-weight:600}
+.add-btn{width:36px;height:36px;background:var(--g500);color:#fff;border:none;border-radius:9px;display:flex;align-items:center;justify-content:center;transition:var(--transition);font-size:18px}
+.add-btn:hover{background:var(--g600);transform:scale(1.08)}
+
+/* ─── TRAINING ─── */
+.training-section{background:linear-gradient(160deg,var(--g900) 0%,var(--g800) 100%);color:#fff;position:relative;overflow:hidden;padding:96px 0}
+.training-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='0' cy='0' r='20'/%3E%3Ccircle cx='60' cy='60' r='20'/%3E%3C/g%3E%3C/svg%3E")}
+.training-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;position:relative}
+.training-left .section-eyebrow{color:#6ee8a2}
+.training-left .section-title{color:#fff}
+.training-left .section-sub{color:rgba(255,255,255,.7);max-width:480px}
+.training-features{display:flex;flex-direction:column;gap:14px;margin:28px 0}
+.training-feature{display:flex;align-items:flex-start;gap:14px}
+.tf-icon{width:36px;height:36px;background:rgba(110,232,162,.15);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;border:1px solid rgba(110,232,162,.2)}
+.tf-text h4{font-weight:600;font-size:14.5px;margin-bottom:3px}
+.tf-text p{font-size:13px;opacity:.7;line-height:1.5}
+
+.sessions-panel{background:rgba(255,255,255,.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:28px}
+.sessions-panel h3{font-family:var(--font-display);font-size:18px;font-weight:700;margin-bottom:6px}
+.sessions-panel-sub{font-size:13px;opacity:.6;margin-bottom:22px}
+.session-row{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;transition:var(--transition)}
+.session-row:hover{background:rgba(255,255,255,.12);border-color:rgba(110,232,162,.4)}
+.session-row-left{flex:1}
+.session-row-date{font-weight:700;font-size:14px;margin-bottom:3px}
+.session-row-info{font-size:12px;opacity:.65;display:flex;gap:10px}
+.session-row-right{display:flex;align-items:center;gap:10px}
+.book-seat-btn{background:var(--g400);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:var(--transition)}
+.book-seat-btn:hover{background:var(--g500)}
+.price-tag{font-family:var(--font-display);font-size:15px;font-weight:800;opacity:.9}
+
+/* ─── MANUFACTURERS ─── */
+.mfr-section{background:#fff;padding:96px 0}
+.mfr-filter{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 40px}
+.mfr-filter-btn{padding:7px 16px;border:1.5px solid var(--gray2);border-radius:50px;background:#fff;font-size:13px;font-weight:500;color:var(--gray5);cursor:pointer;transition:var(--transition);font-family:var(--font-body)}
+.mfr-filter-btn:hover,.mfr-filter-btn.active{background:var(--g50);border-color:var(--g400);color:var(--g700)}
+.mfr-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.mfr-card{background:var(--off);border:1.5px solid var(--gray2);border-radius:var(--radius);padding:20px 14px;text-align:center;cursor:pointer;transition:var(--transition)}
+.mfr-card:hover{border-color:var(--g400);background:var(--g50);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.mfr-logo{width:52px;height:52px;background:var(--gray2);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--gray7);letter-spacing:.5px;transition:var(--transition)}
+.mfr-card:hover .mfr-logo{background:var(--g200);color:var(--g800)}
+.mfr-name{font-size:12.5px;font-weight:600;color:var(--gray7)}
+.mfr-count{font-size:11px;color:var(--gray3);margin-top:2px}
+
+/* ─── BOOKING MODAL ─── */
+.modal-overlay{position:fixed;inset:0;background:rgba(6,44,20,.65);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:var(--radius-lg);width:100%;max-width:540px;box-shadow:var(--shadow-lg);overflow:hidden;animation:modalIn .22s ease}
+@keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:none}}
+.modal-header{background:linear-gradient(135deg,var(--g800),var(--g600));color:#fff;padding:24px 28px;display:flex;justify-content:space-between;align-items:flex-start}
+.modal-header h3{font-family:var(--font-display);font-size:20px;font-weight:800;margin-bottom:4px}
+.modal-header p{font-size:13px;opacity:.75}
+.modal-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.modal-close:hover{background:rgba(255,255,255,.28)}
+.modal-body{padding:28px}
+.modal-step{display:none}
+.modal-step.active{display:block}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--gray7);margin-bottom:6px}
+.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--gray2);border-radius:var(--radius);font-size:14px;font-family:var(--font-body);color:var(--gray9);outline:none;transition:var(--transition);background:#fff}
+.form-input:focus{border-color:var(--g500);box-shadow:0 0 0 3px rgba(34,145,62,.1)}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667a6e' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+.session-select-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.session-choice{border:1.5px solid var(--gray2);border-radius:var(--radius);padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:var(--transition)}
+.session-choice:hover,.session-choice.selected{border-color:var(--g500);background:var(--g50)}
+.session-choice.selected .session-choice-radio{background:var(--g500);border-color:var(--g500)}
+.session-choice.selected .session-choice-radio::after{opacity:1}
+.session-choice-radio{width:18px;height:18px;border:2px solid var(--gray3);border-radius:50%;flex-shrink:0;position:relative;transition:var(--transition)}
+.session-choice-radio::after{content:'';position:absolute;inset:3px;background:#fff;border-radius:50%;opacity:0;transition:opacity .15s}
+.session-choice-date{font-weight:700;font-size:14px;color:var(--gray9)}
+.session-choice-meta{font-size:12px;color:var(--gray5);margin-top:2px}
+.session-choice-price{font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--g700)}
+.modal-footer{padding:0 28px 28px;display:flex;gap:10px;justify-content:flex-end}
+.modal-step-indicator{display:flex;gap:6px;margin-bottom:22px;justify-content:center}
+.step-dot{width:8px;height:8px;border-radius:50%;background:var(--gray2);transition:var(--transition)}
+.step-dot.active{background:var(--g500);width:24px;border-radius:4px}
+.booking-success{text-align:center;padding:20px 0}
+.success-icon{width:72px;height:72px;background:var(--g100);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 18px}
+.booking-success h3{font-family:var(--font-display);font-size:22px;color:var(--g800);margin-bottom:8px}
+.booking-success p{color:var(--gray5);font-size:14px;line-height:1.6}
+
+/* ─── ABOUT / WHY US ─── */
+.whyus-section{background:var(--g50);padding:96px 0}
+.whyus-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.whyus-visual{position:relative}
+.whyus-main-img{background:linear-gradient(135deg,var(--g800),var(--g600));border-radius:var(--radius-lg);height:380px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden}
+.whyus-main-img::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,44,20,.6) 0%,transparent 60%)}
+.whyus-badge-card{position:absolute;bottom:-20px;right:-20px;background:#fff;border-radius:var(--radius-lg);padding:18px 22px;box-shadow:var(--shadow-lg);border:1.5px solid var(--gray2)}
+.whyus-badge-num{font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--g600);line-height:1}
+.whyus-badge-txt{font-size:13px;color:var(--gray5);margin-top:4px}
+.why-points{display:flex;flex-direction:column;gap:20px;margin-top:32px}
+.why-point{display:flex;gap:14px;align-items:flex-start}
+.wp-num{width:34px;height:34px;background:var(--g500);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;font-family:var(--font-display)}
+.wp-text h4{font-weight:700;font-size:15px;color:var(--g900);margin-bottom:4px}
+.wp-text p{font-size:13.5px;color:var(--gray5);line-height:1.55}
+
+/* ─── CONTACT ─── */
+.contact-section{background:#fff;padding:96px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-info{background:linear-gradient(160deg,var(--g900),var(--g700));color:#fff;border-radius:var(--radius-lg);padding:40px;height:100%}
+.contact-info h3{font-family:var(--font-display);font-size:24px;font-weight:800;margin-bottom:10px}
+.contact-info p{opacity:.75;font-size:14.5px;line-height:1.65;margin-bottom:32px}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:22px}
+.cd-icon{width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cd-label{font-size:11.5px;opacity:.6;margin-bottom:3px;letter-spacing:.5px;text-transform:uppercase}
+.cd-value{font-size:14.5px;font-weight:600}
+.contact-form{background:var(--g50);border-radius:var(--radius-lg);padding:36px;border:1.5px solid var(--g200)}
+.contact-form h3{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--g900);margin-bottom:6px}
+.contact-form p{color:var(--gray5);font-size:14px;margin-bottom:26px}
+.form-submit{width:100%;padding:14px;background:var(--g500);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:700;font-family:var(--font-body);cursor:pointer;transition:var(--transition)}
+.form-submit:hover{background:var(--g600);box-shadow:0 4px 16px rgba(34,145,62,.3)}
+
+/* ─── FOOTER ─── */
+.footer{background:var(--g900);color:rgba(255,255,255,.7);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo-text{color:#fff;font-size:20px}
+.footer-brand p{font-size:13.5px;margin:14px 0 20px;line-height:1.65;max-width:280px}
+.footer-social{display:flex;gap:10px}
+.social-btn{width:36px;height:36px;background:rgba(255,255,255,.08);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;transition:var(--transition)}
+.social-btn:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+.footer-col h4{font-family:var(--font-display);font-weight:700;font-size:14.5px;color:#fff;margin-bottom:18px}
+.footer-links{display:flex;flex-direction:column;gap:9px}
+.footer-link{font-size:13.5px;transition:color .2s}
+.footer-link:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:13px}
+
+/* ─── MOBILE MENU ─── */
+.mobile-menu-btn{display:none;background:none;border:none;color:var(--gray7);padding:8px;cursor:pointer}
+.mobile-menu{position:fixed;inset:0;background:var(--white);z-index:1500;display:none;flex-direction:column;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu-header{padding:16px 20px;border-bottom:1px solid var(--gray1);display:flex;justify-content:space-between;align-items:center}
+.mobile-nav{padding:16px 20px;flex:1}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:16px;font-weight:600;color:var(--gray9);border-bottom:1px solid var(--gray1)}
+.mobile-subnav{padding:8px 0 8px 16px;border-bottom:1px solid var(--gray1);display:none}
+.mobile-subnav.open{display:block}
+.mobile-sub-link{display:block;padding:9px 0;font-size:14.5px;color:var(--gray5)}
+.mobile-actions{padding:20px;background:var(--g50);border-top:1px solid var(--g200);display:flex;gap:10px;flex-direction:column}
+
+/* ─── CART DRAWER ─── */
+.cart-drawer{position:fixed;top:0;right:0;width:420px;max-width:100vw;height:100vh;background:#fff;z-index:2500;box-shadow:-8px 0 40px rgba(0,0,0,.15);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;transform:translateX(100%)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-drawer-header{padding:22px 24px;border-bottom:1px solid var(--gray1);display:flex;justify-content:space-between;align-items:center}
+.cart-drawer-header h3{font-family:var(--font-display);font-size:19px;font-weight:800}
+.cart-drawer-body{flex:1;overflow-y:auto;padding:20px 24px}
+.cart-empty{text-align:center;padding:40px 0;color:var(--gray3)}
+.cart-empty p{font-size:14px;margin-top:8px}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--gray1)}
+.cart-item-img{width:56px;height:56px;background:var(--g100);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.cart-item-info{flex:1}
+.cart-item-name{font-weight:600;font-size:14px;margin-bottom:4px}
+.cart-item-brand{font-size:12px;color:var(--gray5)}
+.cart-item-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.cart-item-price{font-weight:800;font-size:15px;color:var(--g800);font-family:var(--font-display)}
+.cart-qty{display:flex;align-items:center;gap:8px;font-size:13px}
+.qty-btn{width:24px;height:24px;border:1.5px solid var(--gray2);border-radius:6px;background:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.qty-btn:hover{border-color:var(--g400);color:var(--g600)}
+.cart-drawer-footer{padding:20px 24px;border-top:1px solid var(--gray1)}
+.cart-total-row{display:flex;justify-content:space-between;margin-bottom:16px}
+.cart-total-label{font-size:15px;font-weight:600}
+.cart-total-value{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--g800)}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:2400;display:none}
+.cart-overlay.open{display:block}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .container{padding:0 36px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-card{display:none}
+  .hero h1{font-size:44px}
+  .cat-grid{grid-template-columns:repeat(3,1fr);gap:14px}
+  .products-grid{grid-template-columns:repeat(3,1fr)}
+  .mfr-grid{grid-template-columns:repeat(4,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .training-inner{grid-template-columns:1fr;gap:48px}
+  .whyus-grid{grid-template-columns:1fr;gap:40px}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .contact-info{height:auto}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .nav-links,.topbar-left{display:none}
+  .mobile-menu-btn{display:flex}
+  .topbar{display:none}
+  .section{padding:64px 0}
+  .section-header{margin-bottom:40px}
+  .hero{padding:72px 0 64px}
+  .hero h1{font-size:32px;letter-spacing:-.5px}
+  .hero-sub{font-size:15px}
+  .hero-ctas{gap:10px}
+  .hero-ctas .btn-lg{padding:12px 22px;font-size:14.5px}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .hero-stat-num{font-size:22px}
+  .quick-search-section{padding:28px 0}
+  .qs-inner{flex-direction:column;align-items:stretch}
+  .qs-label{display:none}
+  .cat-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .cat-card{padding:20px 14px}
+  .cat-icon{width:44px;height:44px;font-size:20px}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .products-header{flex-direction:column;align-items:flex-start;gap:14px}
+  .mfr-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .mfr-filter{gap:6px}
+  .mfr-filter-btn{padding:6px 12px;font-size:12px}
+  .training-inner{gap:36px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer{padding:48px 0 0}
+  .footer-brand p{max-width:100%}
+  .trustbar-inner{justify-content:center;gap:16px}
+  .trust-item:nth-child(3),.trust-item:nth-child(4){display:none}
+  .section-title{font-size:26px}
+  .whyus-main-img{height:260px}
+  .whyus-badge-card{right:8px;bottom:-12px;padding:14px 16px}
+  .whyus-badge-num{font-size:26px}
+  .contact-info{padding:28px 24px;border-radius:var(--radius)}
+  .contact-form{padding:24px 20px}
+  .modal{width:calc(100% - 24px);max-height:90vh;overflow-y:auto}
+  .form-row{grid-template-columns:1fr}
+  .cart-drawer{width:100%;max-width:100vw}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+  .footer-bottom span:last-child{display:flex;gap:16px;flex-wrap:wrap}
+}
+@media(max-width:420px){
+  .container{padding:0 16px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .products-grid{grid-template-columns:1fr}
+  .mfr-grid{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:28px}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .hero-stat-num{font-size:18px}
+  .hero-stat-label{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span>📍 Pleasant Hill, CA 94523</span>
+      <a href="tel:5106367900">📞 (510) 636-7900</a>
+      <span>🕐 Mon–Fri · 7:00 AM – 4:00 PM</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#contact"><span class="__cf_email__" data-cfemail="8af9ebe6eff9cae9e5e4fef8e5e6e9e5a4e9e5e7">[email&#160;protected]</span></a>
+      <a href="#" onclick="openSearch()">🔍 Quick Order</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">C</div>
+        <span class="logo-text">Control<span>co</span></span>
+      </a>
+
+      <div class="nav-links">
+        <!-- CATEGORIES -->
+        <div class="nav-item">
+          <a href="#categories" class="nav-link">
+            Categories
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="mega-menu">
+            <div class="mega-menu-grid">
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">⚙️</div><div><div class="mega-link-text">Actuators</div><div class="mega-link-sub">Rotary & Linear</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">🏢</div><div><div class="mega-link-text">Building Automation</div><div class="mega-link-sub">Controllers & Systems</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">🔥</div><div><div class="mega-link-text">Combustion Control</div><div class="mega-link-sub">Burner Management</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">⚡</div><div><div class="mega-link-text">Current Switches</div><div class="mega-link-sub">& Transducers</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">💨</div><div><div class="mega-link-text">Gas Detectors</div><div class="mega-link-sub">Safety Sensors</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">📊</div><div><div class="mega-link-text">Meters</div><div class="mega-link-sub">Energy & Flow</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">🔧</div><div><div class="mega-link-text">Panel Components</div><div class="mega-link-sub">DIN Rail, Enclosures</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">🔌</div><div><div class="mega-link-text">Relays</div><div class="mega-link-sub">Control Relays</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">📡</div><div><div class="mega-link-text">Sensors</div><div class="mega-link-sub">Temp, Humidity, CO2</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">🌡️</div><div><div class="mega-link-text">Thermostats</div><div class="mega-link-sub">Commercial Grade</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">🔩</div><div><div class="mega-link-text">Valves</div><div class="mega-link-sub">Ball, Globe, Zone</div></div></a>
+              <a class="mega-link" href="#categories"><div class="mega-link-icon">🔋</div><div><div class="mega-link-text">VFDs</div><div class="mega-link-sub">Variable Freq. Drives</div></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MANUFACTURERS -->
+        <div class="nav-item">
+          <a href="#manufacturers" class="nav-link">
+            Manufacturers
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a class="dropdown-link" href="#manufacturers">🏷️ All Manufacturers</a>
+            <a class="dropdown-link" href="#manufacturers">Belimo</a>
+            <a class="dropdown-link" href="#manufacturers">Honeywell</a>
+            <a class="dropdown-link" href="#manufacturers">Siemens</a>
+            <a class="dropdown-link" href="#manufacturers">Johnson Controls</a>
+            <a class="dropdown-link" href="#manufacturers">Schneider Electric</a>
+            <a class="dropdown-link" href="#manufacturers">Dwyer</a>
+            <a class="dropdown-link" href="#manufacturers" style="color:var(--g500);font-weight:700;">View All 22 →</a>
+          </div>
+        </div>
+
+        <a href="#training" class="nav-link">Training</a>
+
+        <!-- RESOURCES -->
+        <div class="nav-item">
+          <a href="#contact" class="nav-link">
+            Resources
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a class="dropdown-link" href="#about">📖 About Us</a>
+            <a class="dropdown-link" href="#contact">📍 Locations</a>
+            <a class="dropdown-link" href="#">🛠️ Technical Support</a>
+            <a class="dropdown-link" href="#">📄 Product Selection Guide</a>
+          </div>
+        </div>
+
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="nav-search-btn" onclick="openSearch()" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a href="#" class="btn btn-outline btn-sm" onclick="openModal(event)">Login</a>
+        <button class="btn btn-primary btn-sm cart-btn" onclick="toggleCart()">
+          🛒 Cart
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay" onclick="closeSearchOutside(event)">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#adbdb5" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search by part number, product name or manufacturer…" oninput="handleSearch(this.value)" autofocus/>
+      <button onclick="closeSearch()" style="background:none;border:none;color:var(--gray3);cursor:pointer;font-size:20px">✕</button>
+    </div>
+    <div class="search-suggestions">
+      <div class="search-suggestion" onclick="performSearch('Belimo actuator')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Belimo actuator</div>
+      <div class="search-suggestion" onclick="performSearch('Honeywell thermostat')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Honeywell thermostat</div>
+      <div class="search-suggestion" onclick="performSearch('N4 training')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> N4 training course</div>
+      <div class="search-suggestion" onclick="performSearch('Siemens sensor')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Siemens sensor</div>
+      <div class="search-suggestion" onclick="performSearch('VFD drive')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> VFD variable frequency drive</div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="#" class="logo"><div class="logo-mark">C</div><span class="logo-text">Control<span>co</span></span></a>
+    <button onclick="toggleMobileMenu()" style="background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray7)">✕</button>
+  </div>
+  <div class="mobile-nav">
+    <div class="mobile-nav-link" onclick="this.nextElementSibling.classList.toggle('open')">
+      Categories <span>›</span>
+    </div>
+    <div class="mobile-subnav">
+      <a class="mobile-sub-link" href="#categories" onclick="toggleMobileMenu()">⚙️ Actuators</a>
+      <a class="mobile-sub-link" href="#categories" onclick="toggleMobileMenu()">🏢 Building Automation</a>
+      <a class="mobile-sub-link" href="#categories" onclick="toggleMobileMenu()">📡 Sensors</a>
+      <a class="mobile-sub-link" href="#categories" onclick="toggleMobileMenu()">🌡️ Thermostats</a>
+      <a class="mobile-sub-link" href="#categories" onclick="toggleMobileMenu()">🔩 Valves</a>
+      <a class="mobile-sub-link" href="#categories" onclick="toggleMobileMenu()">🔋 VFDs</a>
+    </div>
+    <a class="mobile-nav-link" href="#manufacturers" onclick="toggleMobileMenu()">Manufacturers <span>›</span></a>
+    <a class="mobile-nav-link" href="#training" onclick="toggleMobileMenu()">Training <span>›</span></a>
+    <a class="mobile-nav-link" href="#about" onclick="toggleMobileMenu()">About Us <span>›</span></a>
+    <a class="mobile-nav-link" href="#contact" onclick="toggleMobileMenu()">Contact <span>›</span></a>
+  </div>
+  <div class="mobile-actions">
+    <button class="btn btn-primary" onclick="openBookingModal();toggleMobileMenu()">🎓 Book N4 Training — $2,950</button>
+    <a href="#contact" class="btn btn-outline" onclick="toggleMobileMenu()">📞 (510) 636-7900</a>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge"><span></span> Certified Niagara N4 Distributor</div>
+        <h1>Building Automation<br><span>Simplified.</span></h1>
+        <p class="hero-sub">Your trusted source for premium BAS components from 22 industry-leading manufacturers. Expert support, fast shipping, and certified N4 training — all in one place.</p>
+        <div class="hero-ctas">
+          <a href="#categories" class="btn btn-white btn-lg">🛒 Shop Products</a>
+          <button class="btn btn-ghost btn-lg" onclick="openBookingModal()">🎓 Book N4 Training</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">22+</div><div class="hero-stat-label">Manufacturers</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">10K+</div><div class="hero-stat-label">Products</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">9</div><div class="hero-stat-label">Training Sessions '26</div></div>
+        </div>
+      </div>
+
+      <!-- TRAINING CARD -->
+      <div class="hero-card">
+        <div class="hero-card-title">🎓 Upcoming Training Sessions</div>
+        <div class="session-item">
+          <div>
+            <div class="session-dates">Mar 23–27, 2026</div>
+            <div class="session-meta">Niagara N4 Certification · Virtual · $2,950</div>
+          </div>
+          <span class="session-seats seats-open">Open</span>
+        </div>
+        <div class="session-item">
+          <div>
+            <div class="session-dates">Apr 27 – May 1, 2026</div>
+            <div class="session-meta">Niagara N4 Certification · Virtual · $2,950</div>
+          </div>
+          <span class="session-seats seats-open">Open</span>
+        </div>
+        <div class="session-item">
+          <div>
+            <div class="session-dates">June 22–26, 2026</div>
+            <div class="session-meta">Niagara N4 Certification · Virtual · $2,950</div>
+          </div>
+          <span class="session-seats seats-limited">3 seats left</span>
+        </div>
+        <div class="session-item">
+          <div>
+            <div class="session-dates">N4 End User Training</div>
+            <div class="session-meta">Self-paced · Flexible dates · $1,800</div>
+          </div>
+          <span class="session-seats seats-open">Available</span>
+        </div>
+        <button class="btn btn-primary hero-card-cta" onclick="openBookingModal()">View All Sessions & Book →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+  <div class="container">
+    <div class="trustbar-inner">
+      <div class="trust-item"><div class="trust-icon">🚚</div> Fast Nationwide Shipping</div>
+      <div class="trust-item"><div class="trust-icon">📞</div> Expert Tech Support</div>
+      <div class="trust-item"><div class="trust-icon">🏅</div> Certified N4 Trainer</div>
+      <div class="trust-item"><div class="trust-icon">💳</div> Net 30 Terms Available</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK SEARCH -->
+<div class="quick-search-section">
+  <div class="container">
+    <div class="qs-inner">
+      <span class="qs-label">🔍 Find a Product:</span>
+      <div class="qs-input-wrap">
+        <input class="qs-input" type="text" placeholder="Search by part number, brand, or product type…" onfocus="openSearch()" readonly/>
+        <svg class="qs-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <a href="#categories" class="btn btn-primary">Browse All Products</a>
+      <a href="#" class="btn btn-outline" onclick="event.preventDefault();openSearch()">Quick Order</a>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section categories-section" id="categories">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Product Catalog</div>
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-sub">Explore our complete range of building automation components, from sensors to variable frequency drives.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="filterProducts('actuators')">
+        <div class="cat-icon">⚙️</div>
+        <div class="cat-name">Actuators</div>
+        <div class="cat-count">240+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('building-automation')">
+        <div class="cat-icon">🏢</div>
+        <div class="cat-name">Building Automation</div>
+        <div class="cat-count">180+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('combustion')">
+        <div class="cat-icon">🔥</div>
+        <div class="cat-name">Combustion Control</div>
+        <div class="cat-count">95+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('sensors')">
+        <div class="cat-icon">📡</div>
+        <div class="cat-name">Sensors</div>
+        <div class="cat-count">320+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('thermostats')">
+        <div class="cat-icon">🌡️</div>
+        <div class="cat-name">Thermostats</div>
+        <div class="cat-count">110+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('valves')">
+        <div class="cat-icon">🔩</div>
+        <div class="cat-name">Valves</div>
+        <div class="cat-count">210+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('vfds')">
+        <div class="cat-icon">🔋</div>
+        <div class="cat-name">VFDs</div>
+        <div class="cat-count">130+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('relays')">
+        <div class="cat-icon">🔌</div>
+        <div class="cat-name">Relays</div>
+        <div class="cat-count">85+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('meters')">
+        <div class="cat-icon">📊</div>
+        <div class="cat-name">Meters</div>
+        <div class="cat-count">70+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('gas')">
+        <div class="cat-icon">💨</div>
+        <div class="cat-name">Gas Detectors</div>
+        <div class="cat-count">55+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('panel')">
+        <div class="cat-icon">🗄️</div>
+        <div class="cat-name">Panel Components</div>
+        <div class="cat-count">150+ products</div>
+      </div>
+      <div class="cat-card" onclick="filterProducts('current')">
+        <div class="cat-icon">⚡</div>
+        <div class="cat-name">Current Switches</div>
+        <div class="cat-count">60+ products</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section products-section" id="products">
+  <div class="container">
+    <div class="products-header">
+      <div>
+        <div class="section-eyebrow">Products</div>
+        <h2 class="section-title" style="margin-bottom:0">Featured Products</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <div class="products-tabs">
+          <button class="tab-btn active" onclick="setTab(this,'all')">All</button>
+          <button class="tab-btn" onclick="setTab(this,'belimo')">Belimo</button>
+          <button class="tab-btn" onclick="setTab(this,'honeywell')">Honeywell</button>
+          <button class="tab-btn" onclick="setTab(this,'siemens')">Siemens</button>
+        </div>
+        <a href="#categories" class="btn btn-outline btn-sm">View All →</a>
+      </div>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- Products rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section class="training-section" id="training">
+  <div class="container">
+    <div class="training-inner">
+      <div class="training-left">
+        <div class="section-eyebrow">Certified Training</div>
+        <h2 class="section-title">Niagara N4<br>Certification Program</h2>
+        <p class="section-sub">Become a certified Niagara N4 technician with Controlco's intensive 5-day training program. Taught by industry experts with real-world hands-on curriculum.</p>
+        <div class="training-features">
+          <div class="training-feature">
+            <div class="tf-icon">📅</div>
+            <div class="tf-text"><h4>5-Day Intensive Program</h4><p>Monday–Friday, full-day sessions covering N4 architecture, drivers, graphics, and scheduling.</p></div>
+          </div>
+          <div class="training-feature">
+            <div class="tf-icon">🖥️</div>
+            <div class="tf-text"><h4>Virtual & In-Person Options</h4><p>Attend from anywhere via our virtual platform, or join us at our Pleasant Hill, CA facility.</p></div>
+          </div>
+          <div class="training-feature">
+            <div class="tf-icon">🏆</div>
+            <div class="tf-text"><h4>Certificate of Completion</h4><p>Receive an official Controlco N4 certificate upon successful completion of the program.</p></div>
+          </div>
+          <div class="training-feature">
+            <div class="tf-icon">👥</div>
+            <div class="tf-text"><h4>Team Booking Available</h4><p>Register multiple attendees from your company in a single transaction. Invoice/PO accepted.</p></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+          <button class="btn btn-white" onclick="openBookingModal()">Book N4 Certification — $2,950</button>
+          <button class="btn btn-ghost" onclick="openBookingModal()">End User Training — $1,800</button>
+        </div>
+      </div>
+
+      <div class="sessions-panel">
+        <h3>2026 Training Calendar</h3>
+        <p class="sessions-panel-sub">Select a session to book your seat</p>
+
+        <div class="session-row" onclick="openBookingModal()">
+          <div class="session-row-left">
+            <div class="session-row-date">Feb 23–27, 2026</div>
+            <div class="session-row-info"><span>N4 Certification</span><span>·</span><span>Virtual</span></div>
+          </div>
+          <div class="session-row-right">
+            <span class="tag tag-gold">3 seats left</span>
+            <span class="price-tag">$2,950</span>
+            <button class="book-seat-btn">Book →</button>
+          </div>
+        </div>
+        <div class="session-row" onclick="openBookingModal()">
+          <div class="session-row-left">
+            <div class="session-row-date">Mar 23–27, 2026</div>
+            <div class="session-row-info"><span>N4 Certification</span><span>·</span><span>Virtual</span></div>
+          </div>
+          <div class="session-row-right">
+            <span class="tag tag-green">Open</span>
+            <span class="price-tag">$2,950</span>
+            <button class="book-seat-btn">Book →</button>
+          </div>
+        </div>
+        <div class="session-row" onclick="openBookingModal()">
+          <div class="session-row-left">
+            <div class="session-row-date">Apr 27 – May 1, 2026</div>
+            <div class="session-row-info"><span>N4 Certification</span><span>·</span><span>Virtual</span></div>
+          </div>
+          <div class="session-row-right">
+            <span class="tag tag-green">Open</span>
+            <span class="price-tag">$2,950</span>
+            <button class="book-seat-btn">Book →</button>
+          </div>
+        </div>
+        <div class="session-row" onclick="openBookingModal()">
+          <div class="session-row-left">
+            <div class="session-row-date">June 22–26, 2026</div>
+            <div class="session-row-info"><span>N4 Certification</span><span>·</span><span>Virtual</span></div>
+          </div>
+          <div class="session-row-right">
+            <span class="tag tag-green">Open</span>
+            <span class="price-tag">$2,950</span>
+            <button class="book-seat-btn">Book →</button>
+          </div>
+        </div>
+        <div class="session-row" onclick="openBookingModal()">
+          <div class="session-row-left">
+            <div class="session-row-date">N4 End User Training</div>
+            <div class="session-row-info"><span>Flexible dates</span><span>·</span><span>Self-paced</span></div>
+          </div>
+          <div class="session-row-right">
+            <span class="tag tag-green">Available</span>
+            <span class="price-tag">$1,800</span>
+            <button class="book-seat-btn">Book →</button>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);font-size:13px;opacity:.75;text-align:center">
+          📧 Questions? Email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2350424f465063404c4d57514c4f404c0d404c4e">[email&#160;protected]</a></strong> or call <strong>(510) 636-7900</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURERS -->
+<section class="mfr-section" id="manufacturers">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Our Partners</div>
+      <h2 class="section-title">22 Industry-Leading Manufacturers</h2>
+      <p class="section-sub">We're an authorized distributor for the world's most trusted building automation brands.</p>
+    </div>
+    <div class="mfr-filter">
+      <button class="mfr-filter-btn active" onclick="filterMfr(this,'all')">All Brands</button>
+      <button class="mfr-filter-btn" onclick="filterMfr(this,'actuator')">Actuators</button>
+      <button class="mfr-filter-btn" onclick="filterMfr(this,'controls')">Controls</button>
+      <button class="mfr-filter-btn" onclick="filterMfr(this,'sensing')">Sensing</button>
+      <button class="mfr-filter-btn" onclick="filterMfr(this,'safety')">Safety</button>
+    </div>
+    <div class="mfr-grid">
+      <div class="mfr-card"><div class="mfr-logo">BEL</div><div class="mfr-name">Belimo</div><div class="mfr-count">340 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">HON</div><div class="mfr-name">Honeywell</div><div class="mfr-count">280 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">SIE</div><div class="mfr-name">Siemens</div><div class="mfr-count">260 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">JCI</div><div class="mfr-name">Johnson Controls</div><div class="mfr-count">195 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">SE</div><div class="mfr-name">Schneider Electric</div><div class="mfr-count">175 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">DWY</div><div class="mfr-name">Dwyer</div><div class="mfr-count">210 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">ACI</div><div class="mfr-name">ACI</div><div class="mfr-count">130 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">KMC</div><div class="mfr-name">KMC Controls</div><div class="mfr-count">120 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">EIO</div><div class="mfr-name">EasyIO</div><div class="mfr-count">88 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">TRI</div><div class="mfr-name">Tridium</div><div class="mfr-count">95 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">FYE</div><div class="mfr-name">Fireye</div><div class="mfr-count">72 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">FDI</div><div class="mfr-name">Functional Devices</div><div class="mfr-count">65 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">IDC</div><div class="mfr-name">IDEC</div><div class="mfr-count">58 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">iSMA</div><div class="mfr-name">iSMA Controlii</div><div class="mfr-count">44 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">MAX</div><div class="mfr-name">Maxline</div><div class="mfr-count">38 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">MSA</div><div class="mfr-name">MSA Safety</div><div class="mfr-count">55 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">PRO</div><div class="mfr-name">Prolon</div><div class="mfr-count">42 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">SNV</div><div class="mfr-name">Senva</div><div class="mfr-count">96 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">TBX</div><div class="mfr-name">Tosibox</div><div class="mfr-count">28 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">VRS</div><div class="mfr-name">Veris</div><div class="mfr-count">82 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">WSN</div><div class="mfr-name">Wattsense</div><div class="mfr-count">31 products</div></div>
+      <div class="mfr-card"><div class="mfr-logo">75F</div><div class="mfr-name">75F</div><div class="mfr-count">24 products</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus-section" id="about">
+  <div class="container">
+    <div class="whyus-grid">
+      <div class="whyus-visual">
+        <div class="whyus-main-img" style="font-size:72px">🏭</div>
+        <div class="whyus-badge-card">
+          <div class="whyus-badge-num">25+</div>
+          <div class="whyus-badge-txt">Years in Business</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow">Why Controlco</div>
+        <h2 class="section-title">Your Expert BAS<br>Distribution Partner</h2>
+        <p class="section-sub">Based in Pleasant Hill, CA, Controlco has been the go-to building automation distributor for contractors, engineers, and facilities teams across North America.</p>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="wp-num">1</div>
+            <div class="wp-text">
+              <h4>Authorized Distributor for 22 Brands</h4>
+              <p>Every product is genuine, warranted, and sourced directly from the manufacturer — no gray market, no fakes.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="wp-num">2</div>
+            <div class="wp-text">
+              <h4>Certified Niagara N4 Training Center</h4>
+              <p>We're one of a select few certified N4 training providers in the country, offering year-round certification programs.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="wp-num">3</div>
+            <div class="wp-text">
+              <h4>Expert Technical Support</h4>
+              <p>Our team includes working engineers who can help you spec the right product, troubleshoot, and find what you need fast.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="wp-num">4</div>
+            <div class="wp-text">
+              <h4>Fast Shipping & Net 30 Terms</h4>
+              <p>Same-day shipping on in-stock items, and flexible Net 30 payment terms available for qualified commercial accounts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px">
+      <div class="section-eyebrow" style="justify-content:center">Get in Touch</div>
+      <h2 class="section-title">We're Here to Help</h2>
+      <p class="section-sub" style="margin:0 auto">Whether you need product specs, a quote, training info, or technical support — our team responds fast.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>Our team is available Monday through Friday, 7:00 AM to 4:00 PM Pacific Time. We typically respond to emails within 2 hours during business hours.</p>
+        <div class="contact-detail">
+          <div class="cd-icon">📍</div>
+          <div><div class="cd-label">Address</div><div class="cd-value">2493 Estand Way<br>Pleasant Hill, CA 94523</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📞</div>
+          <div><div class="cd-label">Phone</div><div class="cd-value">(510) 636-7900</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">✉️</div>
+          <div><div class="cd-label">Email</div><div class="cd-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0271636e677142616d6c76706d6e616d2c616d6f">[email&#160;protected]</a></div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">🕐</div>
+          <div><div class="cd-label">Business Hours</div><div class="cd-value">Mon–Fri · 7:00 AM – 4:00 PM PT</div></div>
+        </div>
+        <div style="margin-top:28px;padding:16px;background:rgba(255,255,255,.08);border-radius:var(--radius);font-size:13.5px">
+          🎓 <strong>Training inquiries?</strong> Call or email us directly — we'll help you choose the right session and handle group bookings.
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <p>Fill out the form and we'll get back to you within one business day.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name *</label>
+            <input class="form-input" type="text" placeholder="John"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name *</label>
+            <input class="form-input" type="text" placeholder="Smith"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input class="form-input" type="email" placeholder="john@company.com"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" type="tel" placeholder="(555) 000-0000"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Inquiry Type *</label>
+            <select class="form-input form-select">
+              <option>Product / Pricing</option>
+              <option>Training Info</option>
+              <option>Technical Support</option>
+              <option>Request a Quote</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message *</label>
+          <textarea class="form-input" rows="4" placeholder="Tell us what you need — part numbers, quantities, training questions, etc." style="resize:vertical"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitContact(this)">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:0">
+          <div class="logo-mark">C</div>
+          <span class="logo-text">Control<span>co</span></span>
+        </div>
+        <p>Your trusted Building Automation System distributor. Premium components, certified training, and expert support — all in one place.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" title="LinkedIn">in</a>
+          <a class="social-btn" href="#" title="Twitter">𝕏</a>
+          <a class="social-btn" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <div class="footer-links">
+          <a class="footer-link" href="#categories">Actuators</a>
+          <a class="footer-link" href="#categories">Building Automation</a>
+          <a class="footer-link" href="#categories">Sensors</a>
+          <a class="footer-link" href="#categories">Thermostats</a>
+          <a class="footer-link" href="#categories">Valves & VFDs</a>
+          <a class="footer-link" href="#categories">All Categories →</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <div class="footer-links">
+          <a class="footer-link" href="#training">N4 Training</a>
+          <a class="footer-link" href="#manufacturers">Manufacturers</a>
+          <a class="footer-link" href="#">Product Guide (PDF)</a>
+          <a class="footer-link" href="#">Technical Support</a>
+          <a class="footer-link" href="#about">About Us</a>
+          <a class="footer-link" href="#contact">Locations</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a class="footer-link" href="tel:5106367900">📞 (510) 636-7900</a>
+          <a class="footer-link" href="/cdn-cgi/l/email-protection#394a58555c4a795a56574d4b56555a56175a5654">✉️ <span class="__cf_email__" data-cfemail="a2d1c3cec7d1e2c1cdccd6d0cdcec1cd8cc1cdcf">[email&#160;protected]</span></a>
+          <span class="footer-link">📍 2493 Estand Way<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pleasant Hill, CA 94523</span>
+          <span class="footer-link">🕐 Mon–Fri · 7AM–4PM PT</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Controlco. All rights reserved.</span>
+      <span style="display:flex;gap:20px">
+        <a class="footer-link" href="#">Privacy Policy</a>
+        <a class="footer-link" href="#">Terms of Use</a>
+        <a class="footer-link" href="#">Sitemap</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <h3 id="modalTitle">Book Your Training Seat</h3>
+        <p id="modalSubtitle">Niagara N4 Certification Program · $2,950/seat</p>
+      </div>
+      <button class="modal-close" onclick="closeBookingModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-step-indicator">
+        <div class="step-dot active" id="dot1"></div>
+        <div class="step-dot" id="dot2"></div>
+        <div class="step-dot" id="dot3"></div>
+      </div>
+
+      <!-- STEP 1: Session -->
+      <div class="modal-step active" id="step1">
+        <h4 style="font-weight:700;margin-bottom:6px;color:var(--g900)">Select a Session</h4>
+        <p style="font-size:13px;color:var(--gray5);margin-bottom:16px">Choose your preferred training date</p>
+        <div class="session-select-grid">
+          <div class="session-choice selected" onclick="selectSession(this,'N4 Certification · Feb 23–27, 2026')">
+            <div class="session-choice-radio"></div>
+            <div style="flex:1">
+              <div class="session-choice-date">Feb 23–27, 2026</div>
+              <div class="session-choice-meta">N4 Certification · Virtual · 3 seats remaining</div>
+            </div>
+            <div class="session-choice-price">$2,950</div>
+          </div>
+          <div class="session-choice" onclick="selectSession(this,'N4 Certification · Mar 23–27, 2026')">
+            <div class="session-choice-radio"></div>
+            <div style="flex:1">
+              <div class="session-choice-date">Mar 23–27, 2026</div>
+              <div class="session-choice-meta">N4 Certification · Virtual · Open enrollment</div>
+            </div>
+            <div class="session-choice-price">$2,950</div>
+          </div>
+          <div class="session-choice" onclick="selectSession(this,'N4 Certification · Apr 27–May 1, 2026')">
+            <div class="session-choice-radio"></div>
+            <div style="flex:1">
+              <div class="session-choice-date">Apr 27 – May 1, 2026</div>
+              <div class="session-choice-meta">N4 Certification · Virtual · Open enrollment</div>
+            </div>
+            <div class="session-choice-price">$2,950</div>
+          </div>
+          <div class="session-choice" onclick="selectSession(this,'N4 End User Training · Flexible')">
+            <div class="session-choice-radio"></div>
+            <div style="flex:1">
+              <div class="session-choice-date">N4 End User Training</div>
+              <div class="session-choice-meta">Flexible dates · Self-paced · Always available</div>
+            </div>
+            <div class="session-choice-price">$1,800</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Number of Seats</label>
+          <select class="form-input form-select" id="seatCount" onchange="updateTotal()">
+            <option value="1">1 seat</option>
+            <option value="2">2 seats</option>
+            <option value="3">3 seats</option>
+            <option value="4">4 seats</option>
+            <option value="5">5 seats</option>
+          </select>
+        </div>
+        <div style="background:var(--g50);border:1.5px solid var(--g200);border-radius:var(--radius);padding:14px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:14px;color:var(--gray7)">Total</span>
+          <span style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--g800)" id="totalPrice">$2,950</span>
+        </div>
+      </div>
+
+      <!-- STEP 2: Attendee Info -->
+      <div class="modal-step" id="step2">
+        <h4 style="font-weight:700;margin-bottom:6px;color:var(--g900)">Attendee Information</h4>
+        <p style="font-size:13px;color:var(--gray5);margin-bottom:16px">Tell us about the primary attendee</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name *</label>
+            <input class="form-input" type="text" id="attFirst" placeholder="Jane"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name *</label>
+            <input class="form-input" type="text" id="attLast" placeholder="Smith"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input class="form-input" type="email" id="attEmail" placeholder="jane@company.com"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Company *</label>
+            <input class="form-input" type="text" id="attCompany" placeholder="ACME Controls Inc."/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input class="form-input" type="tel" placeholder="(555) 000-0000"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Experience Level</label>
+          <select class="form-input form-select">
+            <option>No prior N4 experience</option>
+            <option>Some N4 exposure</option>
+            <option>Experienced — refresher needed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Payment Method</label>
+          <select class="form-input form-select">
+            <option>Credit Card</option>
+            <option>Purchase Order / Invoice (Net 30)</option>
+            <option>ACH / Wire Transfer</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- STEP 3: Success -->
+      <div class="modal-step" id="step3">
+        <div class="booking-success">
+          <div class="success-icon">✅</div>
+          <h3>Booking Confirmed!</h3>
+          <p>Thank you for registering! A confirmation email has been sent to <strong id="confirmEmail"></strong> with your session details, calendar invite, and pre-training materials.</p>
+          <div style="background:var(--g50);border:1.5px solid var(--g200);border-radius:var(--radius);padding:16px;margin:20px 0;text-align:left">
+            <div style="font-size:13px;font-weight:700;margin-bottom:10px;color:var(--g800)">What happens next:</div>
+            <div style="font-size:13px;color:var(--gray5);line-height:2">📧 Confirmation email with receipt<br>📅 Calendar invite (.ics) attached<br>📚 Pre-training reading materials sent 1 week before<br>🔗 Zoom / login link sent 24 hours before start</div>
+          </div>
+          <p style="font-size:13px;">Questions? Contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="196a78757c6a597a76776d6b76757a76377a7674">[email&#160;protected]</a></strong> or <strong>(510) 636-7900</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer" id="modalFooter">
+      <button class="btn btn-outline" id="backBtn" onclick="modalBack()" style="display:none">← Back</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="modalNext()">Select Session →</button>
+    </div>
+  </div>
+</div>
+
+<!-- CART OVERLAY & DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3>🛒 Your Cart</h3>
+    <button onclick="toggleCart()" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--gray5)">✕</button>
+  </div>
+  <div class="cart-drawer-body" id="cartBody">
+    <div class="cart-empty">
+      <div style="font-size:48px">🛒</div>
+      <p>Your cart is empty.<br>Browse products to get started.</p>
+    </div>
+  </div>
+  <div class="cart-drawer-footer" id="cartFooter" style="display:none">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Subtotal</span>
+      <span class="cart-total-value" id="cartTotal">$0.00</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:8px">Proceed to Checkout →</button>
+    <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="toggleCart()">Continue Shopping</button>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ─── DATA ─── */
+const products = [
+  {id:1,name:'LRB24-3 Spring Return',brand:'Belimo',cat:'belimo',type:'Actuator',price:142,emoji:'⚙️',badge:'Popular',desc:'2-10V modulating, 24VAC/DC spring return rotary actuator'},
+  {id:2,name:'T775B2024 Controller',brand:'Honeywell',cat:'honeywell',type:'Controller',price:89,emoji:'🌡️',badge:'In Stock',desc:'Dual setpoint electronic temperature controller'},
+  {id:3,name:'Series 616W Transmitter',brand:'Dwyer',cat:'all',type:'Sensor',price:54,emoji:'📡',badge:'New',desc:'Differential pressure transmitter, 0-1" to 0-10" WC'},
+  {id:4,name:'SEH62.1U Sensor',brand:'Siemens',cat:'siemens',type:'Sensor',price:110,emoji:'📡',badge:'In Stock',desc:'Room temperature & humidity sensor with display'},
+  {id:5,name:'EFB24-MFT Spring Return',brand:'Belimo',cat:'belimo',type:'Actuator',price:198,emoji:'⚙️',badge:'Popular',desc:'Multi-function spring return actuator, 24VAC/DC'},
+  {id:6,name:'W7100B1014 Controller',brand:'Honeywell',cat:'honeywell',type:'Controller',price:135,emoji:'🔧',badge:'In Stock',desc:'Commercial unit ventilator controller with economizer'},
+  {id:7,name:'200-0701 Actuator',brand:'Siemens',cat:'siemens',type:'Actuator',price:220,emoji:'⚙️',badge:'In Stock',desc:'Linear actuator for globe valves, 24VAC/DC'},
+  {id:8,name:'616KL Transducer',brand:'Dwyer',cat:'all',type:'Transducer',price:62,emoji:'⚡',badge:'New',desc:'Loop powered differential pressure transducer'},
+];
+
+let cart = [];
+let selectedSession = 'N4 Certification · Feb 23–27, 2026';
+let currentStep = 1;
+let basePrice = 2950;
+
+/* ─── NAVBAR SCROLL ─── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+
+/* ─── SEARCH ─── */
+function openSearch(){document.getElementById('searchOverlay').classList.add('open');setTimeout(()=>document.getElementById('searchInput').focus(),100)}
+function closeSearch(){document.getElementById('searchOverlay').classList.remove('open')}
+function closeSearchOutside(e){if(e.target===document.getElementById('searchOverlay'))closeSearch()}
+function handleSearch(val){/* live search logic here */}
+function performSearch(q){document.getElementById('searchInput').value=q;document.getElementById('searchOverlay').classList.remove('open');document.getElementById('products').scrollIntoView({behavior:'smooth'})}
+
+/* ─── MOBILE MENU ─── */
+function toggleMobileMenu(){
+  const isOpen=document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.classList.toggle('menu-open',isOpen);
+}
+
+/* ─── PRODUCTS ─── */
+function renderProducts(filter='all'){
+  const grid=document.getElementById('productsGrid');
+  const list=filter==='all'?products:products.filter(p=>p.cat===filter);
+  grid.innerHTML=list.map(p=>`
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-bg"></div>
+        <span style="position:relative;font-size:52px">${p.emoji}</span>
+        <div class="product-badge"><span class="tag ${p.badge==='Popular'?'tag-gold':p.badge==='New'?'tag-blue':'tag-green'}">${p.badge}</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div class="product-price"><sup>$</sup>${p.price.toLocaleString()}</div>
+          <button class="add-btn" onclick="addToCart(${p.id})" title="Add to cart">+</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function setTab(btn,filter){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(filter);
+}
+function filterProducts(cat){document.getElementById('products').scrollIntoView({behavior:'smooth'});renderProducts(cat)}
+function filterMfr(btn,cat){document.querySelectorAll('.mfr-filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+
+/* ─── CART ─── */
+function addToCart(id){
+  const p=products.find(x=>x.id===id);
+  const existing=cart.find(x=>x.id===id);
+  if(existing){existing.qty++;}else{cart.push({...p,qty:1});}
+  updateCart();
+  openCart();
+}
+
+function updateCart(){
+  document.getElementById('cartCount').textContent=cart.reduce((s,x)=>s+x.qty,0);
+  const body=document.getElementById('cartBody');
+  const footer=document.getElementById('cartFooter');
+  if(!cart.length){body.innerHTML='<div class="cart-empty"><div style="font-size:48px">🛒</div><p>Your cart is empty.<br>Browse products to get started.</p></div>';footer.style.display='none';return;}
+  body.innerHTML=cart.map(item=>`
+    <div class="cart-item">
+      <div class="cart-item-img">${item.emoji}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-brand">${item.brand} · ${item.type}</div>
+        <div class="cart-item-bottom">
+          <div class="cart-item-price">$${(item.price*item.qty).toLocaleString()}</div>
+          <div class="cart-qty">
+            <button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button>
+            <span>${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+  const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+  document.getElementById('cartTotal').textContent='$'+total.toLocaleString()+'.00';
+  footer.style.display='block';
+}
+
+function changeQty(id,delta){
+  const i=cart.findIndex(x=>x.id===id);
+  cart[i].qty+=delta;
+  if(cart[i].qty<=0)cart.splice(i,1);
+  updateCart();
+}
+
+function openCart(){
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.classList.add('cart-open');
+}
+function toggleCart(){
+  const isOpen=document.getElementById('cartDrawer').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open',isOpen);
+  document.body.classList.toggle('cart-open',isOpen);
+}
+
+/* ─── BOOKING MODAL ─── */
+function openBookingModal(){document.getElementById('bookingModal').classList.add('open');currentStep=1;showStep(1)}
+function closeBookingModal(){document.getElementById('bookingModal').classList.remove('open')}
+
+function selectSession(el,name){
+  document.querySelectorAll('.session-choice').forEach(e=>e.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedSession=name;
+  basePrice=name.includes('End User')?1800:2950;
+  updateTotal();
+}
+
+function updateTotal(){
+  const seats=parseInt(document.getElementById('seatCount').value)||1;
+  document.getElementById('totalPrice').textContent='$'+(basePrice*seats).toLocaleString();
+}
+
+function showStep(n){
+  document.querySelectorAll('.modal-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('step'+n).classList.add('active');
+  document.querySelectorAll('.step-dot').forEach((d,i)=>{d.classList.toggle('active',i+1===n)});
+  const back=document.getElementById('backBtn');
+  const next=document.getElementById('nextBtn');
+  const footer=document.getElementById('modalFooter');
+  if(n===3){footer.style.display='none';return;}
+  footer.style.display='flex';
+  back.style.display=n>1?'inline-flex':'none';
+  next.textContent=n===1?'Attendee Details →':'Confirm & Book →';
+}
+
+function modalNext(){
+  if(currentStep===2){
+    const email=document.getElementById('attEmail').value;
+    const first=document.getElementById('attFirst').value;
+    if(!first||!email){alert('Please fill in required fields.');return;}
+    document.getElementById('confirmEmail').textContent=email;
+  }
+  if(currentStep<3){currentStep++;showStep(currentStep);}
+}
+function modalBack(){if(currentStep>1){currentStep--;showStep(currentStep);}}
+function openModal(e){e.preventDefault();}
+
+/* ─── CONTACT ─── */
+function submitContact(btn){
+  const orig=btn.textContent;
+  btn.textContent='Sending…';btn.disabled=true;
+  setTimeout(()=>{btn.textContent='✅ Message Sent!';btn.style.background='var(--g600)';},1500);
+}
+
+/* ─── INIT ─── */
+renderProducts();
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeSearch();
+    closeBookingModal();
+    if(document.getElementById('cartDrawer').classList.contains('open')) toggleCart();
+    if(document.getElementById('mobileMenu').classList.contains('open')) toggleMobileMenu();
+  }
+});
+</script>
+</body>
+</html>
